@@ -1,0 +1,18 @@
+<!-- Requires crimson.jar or xerces.jar like jars in class path-->
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'
+	debug="true" threshold="DEBUG">
+	<appernder name="A1" class="org.apache.log4j.ConsoleAdapter">
+		<param name="Threshold" value="INFO"/>
+		<layout name="org.apache.log4j.PatternLayout">
+			<param name="ConversationPattern">%r [%t] %-5p %c - %m%n</param>
+		</layout>
+	</appernder>
+	<root>
+		<level value="debug" />
+		<appender-ref ref="A1" />
+	</root>
+	<renderer renderedClass="me.rgomes.Person" renderingClass="me.rgomes.PersonRendener"/>
+</log4j:configuration>

@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>me.rgomes.cookbook</groupId>
+	<artifactId>log4j</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Log4jCookbook</name>
+	<description>Log4j simple example</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<slf4j.version>1.7.0</slf4j.version>
+		<log4j.version>1.2.12</log4j.version>
+	</properties>
+	<dependencies>
+		<!-- 'slf4j-api' and 'slf4j-log4j12' should be same -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- For slf4j 1.7.0, log4j 1.2.12 is required -->
+		<!-- http://www.slf4j.org/codes.html#log4j_version -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<!--  Required for compilation -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+	</dependencies>
+</project>

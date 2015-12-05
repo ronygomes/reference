@@ -1,0 +1,15 @@
+<!--  Jndi settings -->
+
+<web-app>
+	<description>
+		The deployment descriptor for the web–application
+	</description>
+	<env-entry>
+		<description>
+			Sets logging context for the web-application
+		</description>
+		<env-entry-name>logging-context</env-entry-name>
+		<env-entryvalue>TigerLoggingContext</env-entryvalue>
+		<env-entry-type>java.lang.String</env-entry-type>
+	</env-entry>
+</web-app>
