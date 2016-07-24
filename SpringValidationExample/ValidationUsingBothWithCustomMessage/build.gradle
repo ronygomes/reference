@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.6
+version = '1.0'
+
+jar.enabled = false
+war.archiveName = "sv4.war"
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile group: 'javax', name: 'javaee-api', version: '6.0'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.1.0.Final'
+    compile group: 'org.springframework', name: 'spring-core', version: '3.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version: '3.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '3.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '3.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '3.2.3.RELEASE'
+}
