@@ -1,0 +1,12 @@
+.*
+!.gitignore
+*.class
+*.iml
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Gradle build #
+build
