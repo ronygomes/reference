@@ -1,0 +1,14 @@
+Vagrant.configure(2) do |config|
+
+  config.vm.define :haskell do |haskell|
+    haskell.vm.box = 'ubuntu/trusty64'
+    haskell.vm.hostname = 'haskell'
+    haskell.ssh.shell = 'bash'
+
+    haskell.vm.provision :shell, inline: <<-SHELL
+      sudo apt-get update
+      sudo apt-get install -y hugs
+    SHELL
+  end
+
+end
