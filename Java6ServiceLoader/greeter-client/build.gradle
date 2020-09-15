@@ -1,0 +1,11 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+dependencies {
+    implementation project(':greeter-api')
+    runtime project(':greeter-impl')
+}
+
+mainClassName = 'me.ronygomes.greeter.client.Main'

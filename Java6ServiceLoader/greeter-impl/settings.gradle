@@ -1,0 +1,4 @@
+rootProject.name = 'greeter-impl'
+
+include ':greeter-api'
+project(':greeter-api').projectDir = new File('../greeter-api')
