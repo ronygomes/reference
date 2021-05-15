@@ -18,3 +18,7 @@ learn about ServiceLoader
 **JUnit5**\
 As JUnit 5 is the complete rewrite of the library, explored API and platform.
 Truly mesmerizing architecture
+
+**CollectionFramework**\
+Learned the architecture of Java Collection framework and explored Set, Map,
+Queue, Deque, SortedMap, SortedSet interfaces.
