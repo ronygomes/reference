@@ -25,3 +25,7 @@ Queue, Deque, SortedMap, SortedSet interfaces.
 
 **Java11NestBasedAccess**\
 Experimented with Java 11 Nest-Based Access Control.
+
+**SpringSecurityLDAP**\
+Authenticated with embedded and JumpCloup LDAP using Spring Security
+

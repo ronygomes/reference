@@ -1,0 +1,32 @@
+dn: dc=ldap,dc=ronygomes,dc=me
+objectclass: top
+objectclass: domain
+dc: ldap
+
+dn: ou=people,dc=ldap,dc=ronygomes,dc=me
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=groups,dc=ldap,dc=ronygomes,dc=me
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: uid=john,ou=people,dc=ldap,dc=ronygomes,dc=me
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: John Doe
+sn: Doe
+uid: john
+# userPassword: admin
+userPassword: $2a$10$HZmdma4wpwewAk6pfgVvCOF5kSRN8KXTIsYanaFq3u0b2/JKt26gu
+
+dn: cn=developers,ou=groups,dc=ldap,dc=ronygomes,dc=me
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=john,ou=people,dc=ldap,dc=ronygomes,dc=me
