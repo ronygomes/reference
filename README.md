@@ -29,3 +29,5 @@ Experimented with Java 11 Nest-Based Access Control.
 **SpringSecurityLDAP**\
 Authenticated with embedded and JumpCloup LDAP using Spring Security
 
+**Java12SwitchExpression**
+Experimented with JDK `--enable-preview` feature and switch expression
