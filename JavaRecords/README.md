@@ -1,7 +1,7 @@
 ## Java Records
 
-`Java Records` was first introduced as `Preivew Featuer` in Java 13,
-later this feature was finalized in Java 15. It allows creating classes 
+`Java Records` was first introduced as `Preivew Featuer` in Java 14,
+later this feature was finalized in Java 16. It allows creating classes 
 that act as transparent carriers for immutable data.
 
 ### Class Details
@@ -14,10 +14,12 @@ For demonstration, I have the following classes/records in this project:
 
 [Validator.java][3] - Interface with single method `boolean isValid()` for demonstrating interface use case with record
 
-[RecordTest.java][4] - Unit test of `Person` for validating behavior
+[Package annotation][4] - Custom annotations for exploring annotation propagation in `record`
+
+[RecordTest.java][5] - Unit test of `Person` for validating behavior
 
 ### Run
-Assuming Java 15 is installed, tests can be run using following command. This project doesn't have any `main(String[])` to run.
+Assuming Java 16 is installed, tests can be run using following command. This project doesn't have any `main(String[])` to run.
 
 ```java
 $ ./gradlew test
@@ -32,4 +34,5 @@ $ ./gradlew test
 [1]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/main/java/me/ronygomes/reference/Person.java
 [2]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/main/java/me/ronygomes/reference/Person.java#L20-L24
 [3]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/main/java/me/ronygomes/reference/Validator.java
-[4]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/test/java/me/ronygomes/reference/RecordTest.java
+[4]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/main/java/me/ronygomes/reference/annotation
+[5]: https://github.com/ronygomes/reference/blob/master/JavaRecords/src/test/java/me/ronygomes/reference/RecordTest.java

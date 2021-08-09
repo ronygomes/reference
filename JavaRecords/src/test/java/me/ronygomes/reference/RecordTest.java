@@ -1,10 +1,10 @@
 package me.ronygomes.reference;
 
+import me.ronygomes.reference.annotation.*;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.RecordComponent;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -104,4 +104,53 @@ public class RecordTest {
         assertThrows(IllegalAccessException.class, () -> age.set(p, 23));
     }
 
+    @Test
+    void testAnnotationDelegation() throws NoSuchMethodException, NoSuchFieldException {
+        Class<Person> clazz = Person.class;
+
+        assertTrue(clazz.isAnnotationPresent(TypeAnnotation.class));
+
+        Constructor<Person> defaultConstructor = clazz.getDeclaredConstructor(String.class, String.class, int.class);
+        assertTrue(defaultConstructor.isAnnotationPresent(ConstructorAnnotation.class));
+
+        Annotation[][] defaultConstructorParameterAnnotations = defaultConstructor.getParameterAnnotations();
+        assertEquals(0, defaultConstructorParameterAnnotations[0].length);
+        assertEquals(0, defaultConstructorParameterAnnotations[1].length);
+        assertEquals(1, defaultConstructorParameterAnnotations[2].length);
+        assertSame(ParameterAnnotation.class, defaultConstructorParameterAnnotations[2][0].annotationType());
+
+        Constructor<Person> customConstructor = clazz.getDeclaredConstructor(String.class, int.class);
+        assertFalse(customConstructor.isAnnotationPresent(ConstructorAnnotation.class));
+
+        Annotation[][] customConstructorParameterAnnotations = customConstructor.getParameterAnnotations();
+        assertEquals(0, customConstructorParameterAnnotations[0].length);
+        assertEquals(0, customConstructorParameterAnnotations[1].length);
+
+        Field nameField = clazz.getDeclaredField("name");
+        assertEquals(1, nameField.getDeclaredAnnotations().length);
+        assertTrue(nameField.isAnnotationPresent(FieldAnnotation.class));
+
+        Field emailField = clazz.getDeclaredField("email");
+        assertEquals(0, emailField.getDeclaredAnnotations().length);
+
+        Field ageField = clazz.getDeclaredField("age");
+        assertEquals(0, ageField.getDeclaredAnnotations().length);
+
+        Method nameMethod = clazz.getDeclaredMethod("name");
+        assertEquals(0, nameMethod.getDeclaredAnnotations().length);
+        assertEquals(0, nameMethod.getAnnotatedReturnType().getDeclaredAnnotations().length);
+
+        Method emailMethod = clazz.getDeclaredMethod("email");
+        assertEquals(1, emailMethod.getDeclaredAnnotations().length);
+        assertTrue(emailMethod.isAnnotationPresent(MethodAnnotation.class));
+        assertEquals(1, emailMethod.getAnnotatedReturnType().getDeclaredAnnotations().length);
+        assertTrue(emailMethod.getAnnotatedReturnType().isAnnotationPresent(TypeUseAnnotation.class));
+
+        Method ageMethod = clazz.getDeclaredMethod("age");
+        assertEquals(0, ageMethod.getDeclaredAnnotations().length);
+        assertEquals(0, ageMethod.getAnnotatedReturnType().getDeclaredAnnotations().length);
+
+        RecordComponent nameRecordComponent = clazz.getRecordComponents()[0];
+        assertTrue(nameRecordComponent.isAnnotationPresent(RecordComponentAnnotation.class));
+    }
 }

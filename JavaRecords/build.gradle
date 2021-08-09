@@ -5,7 +5,7 @@ plugins {
 group 'me.ronygomes.reference'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 15
+sourceCompatibility = 16
 
 repositories {
     mavenCentral()
