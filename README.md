@@ -35,3 +35,5 @@ Experimented with JDK `--enable-preview` feature and switch expression
 **JavaRecords**\
 Learned and experimented with Java Records
 
+**Mockito**\
+Played with the best mocking library for Java
