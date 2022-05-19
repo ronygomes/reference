@@ -35,10 +35,10 @@ $ ./gradlew test
 * [Mockito GitHub](https://github.com/mockito/mockito)
 
 [1]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/ArgumentCaptorTest.java
-[2]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/ArgumentMatcherTest.java
-[3]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/BDDStyleTest.java
-[4]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/MockitoAnnotationTest.java
-[5]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/MockitoJUnitExtensionTest.java
-[6]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/ReturnValueStubbingTest.java
-[7]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/SpyStubbingTest.java
-[8]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/VerificationTest.java
+[2]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/ArgumentMatcherTest.java
+[3]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/BDDStyleTest.java
+[4]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/MockitoAnnotationTest.java
+[5]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/MockitoJUnitExtensionTest.java
+[6]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/ReturnValueStubbingTest.java
+[7]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/SpyStubbingTest.java
+[8]: https://github.com/ronygomes/reference/blob/master/Mockito/src/test/java/me/ronygomes/reference/mockito/VerificationTest.java
