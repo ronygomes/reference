@@ -37,3 +37,6 @@ Learned and experimented with Java Records
 
 **Mockito**\
 Played with the best mocking library for Java
+
+**Hadoop**\
+Implemented Word Frequency Counter using Map Reduce programming model with Hadoop Framework
