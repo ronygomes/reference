@@ -1,0 +1,17 @@
+syntax = 'proto3';
+
+option java_package = 'me.ronygomes.proto';
+
+import 'packed.proto';
+
+message PackageA {
+  me.ronygomes.proto.PackageA iPackageA = 1;
+  me.ronygomes.proto.PackageB iPackageB = 2;
+
+  PackageA packageA = 3;
+  PackageB packageB = 4;
+}
+
+message PackageB {
+  PackageA a = 1;
+}

@@ -1,0 +1,49 @@
+syntax = 'proto3';
+
+import 'google/protobuf/any.proto';
+import 'google/protobuf/api.proto';
+
+// Intended for version 2
+// import 'google/protobuf/descriptor.proto';
+
+import 'google/protobuf/duration.proto';
+import 'google/protobuf/empty.proto';
+import 'google/protobuf/field_mask.proto';
+import 'google/protobuf/source_context.proto';
+import 'google/protobuf/struct.proto';
+import 'google/protobuf/timestamp.proto';
+import 'google/protobuf/type.proto';
+import 'google/protobuf/wrappers.proto';
+
+
+option java_package = 'me.ronygomes.proto';
+
+// Google defined various custom types
+// https://developers.google.com/protocol-buffers/docs/reference/google.protobuf
+message Types {
+
+  google.protobuf.Any type_any = 1;
+  google.protobuf.Duration type_duration = 3;
+  google.protobuf.Empty type_empty = 4;
+  google.protobuf.Struct type_struct = 7;
+  google.protobuf.Timestamp type_timestamp = 8;
+
+  // These types are used to represent protobuf files in code
+  google.protobuf.FieldMask type_field_mask = 5;
+  google.protobuf.SourceContext type_source_context = 6;
+  google.protobuf.Api type_api = 2;
+  google.protobuf.Type type_type = 9;
+
+  // Wrapper Types
+  // Wrappers for primitive (non-message) types. These types are useful for embedding primitives in the `google.protobuf.Any`
+  // Do Not use with map, oneif, repeated as they already works with primitives
+  google.protobuf.DoubleValue type_wrapper_double = 10;
+  google.protobuf.FloatValue type_wrapper_float = 11;
+  google.protobuf.Int64Value type_wrapper_int64 = 12;
+  google.protobuf.UInt64Value type_wrapper_uint64 = 13;
+  google.protobuf.Int32Value type_wrapper_int32 = 14;
+  google.protobuf.UInt32Value type_wrapper_uint32 = 15;
+  google.protobuf.BoolValue type_wrapper_bool = 16;
+  google.protobuf.StringValue type_wrapper_string = 17;
+  google.protobuf.BytesValue type_wrapper_bytes = 18; // bytes value = 1;
+}

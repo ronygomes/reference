@@ -1,0 +1,11 @@
+syntax = 'proto3';
+
+option java_package = 'me.ronygomes.proto';
+
+message Message {
+  reserved 1, 7, 50 to 60;
+  reserved 'name', 'content';
+
+  // In most languages this has no actual effect. In Java, this becomes a @Deprecated annotation
+  int32 old_field = 6 [deprecated = true];
+}

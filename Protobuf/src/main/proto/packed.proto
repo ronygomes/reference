@@ -1,0 +1,14 @@
+syntax = 'proto3';
+
+// This package has no relation with Java Package
+package me.ronygomes.proto;
+
+option java_package = 'me.ronygomes.proto';
+
+message PackageA {
+
+}
+
+message PackageB {
+  PackageA a = 1;
+}

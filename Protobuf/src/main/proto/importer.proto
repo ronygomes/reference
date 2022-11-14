@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+import 'imported.proto';
+
+option java_package = 'me.ronygomes.proto';
+
+message Token {
+  int32 id = 1;
+  Hello hello = 2;
+}

@@ -1,0 +1,32 @@
+syntax = 'proto3';
+
+option java_package = 'me.ronygomes.proto';
+
+message OneA {
+
+  int32 one = 1;
+  OneB oneB = 2;
+  OneATwoA oneATwoA = 3;
+  OneATwoB oneATwoB = 4;
+  OneB.OneBTwoA oneBOneBTwoA = 5;
+  OneATwoA.OneATwoAThreeA oneATwoAThreeA = 6;
+
+  message OneATwoA {
+    int32 two = 1;
+    OneATwoAThreeA threeA = 2;
+
+    message OneATwoAThreeA {
+      int32 three = 1;
+    }
+  }
+
+  message OneATwoB {
+  }
+}
+
+message OneB {
+  int32 one = 1;
+
+  message OneBTwoA {
+  }
+}

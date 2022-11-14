@@ -1,0 +1,61 @@
+syntax = 'proto3';
+
+// By default proto files are generated as default package
+option java_package = 'me.ronygomes.proto';
+
+enum Color {
+    // Default value is the first value, so recommended to specify UNSPECIFIED
+    // Recommendation: Add UPPERCASE_UNDERSCORED enum name as prefix
+    COLOR_UNSPECIFIED = 0;
+    COLOR_RED = 1;
+    COLOR_BLUE = 2;
+    COLOR_GREEN = 3;
+}
+
+/*
+  proto buffer code parses data by tag denoted with (= number), So give the smallest tag number to the most populated fields
+  Google reserved tags 19000 - 19999
+*/
+message AllType {
+
+    int32 type_int32 = 1;
+    int64 type_int64 = 2;
+
+    // signed
+    sint32 type_sint32 = 3;
+    sint64 type_sint64 = 4;
+
+    // unsigned
+    uint32 type_uint32 = 5;
+    uint64 type_uint64 = 6;
+
+    // Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+    fixed32 type_fixed32 = 7;
+    fixed64 type_fixed64 = 8;
+
+     sfixed32 type_sfixed32 = 9;
+     sfixed64 type_sfixed64 = 10;
+
+     float type_float = 11;
+     double type_double = 12;
+
+     bool type_bool = 13;
+     bytes type_bytes = 14;
+     string type_string = 15;
+     map<int32, string> type_map = 16;
+
+     oneof type_oneof {
+        string type_oneof_one = 101;
+        string type_oneof_two = 102;
+     }
+
+     repeated string type_repeated = 18;
+     Color type_enum = 19;
+
+     Person type_custom = 20;
+}
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+}
