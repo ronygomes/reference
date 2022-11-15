@@ -24,8 +24,11 @@ protobuf {
 }
 
 dependencies {
+    // Google Well Known Types are also included in this package
     implementation "com.google.protobuf:protobuf-java:$protoVersion"
-//    implementation "com.google.protobuf:protobuf-java-util:$protoVersion"
+
+    // Requires for JSON Conversion
+    implementation "com.google.protobuf:protobuf-java-util:$protoVersion"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$jUnitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$jUnitVersion"

@@ -1,0 +1,11 @@
+syntax = 'proto3';
+
+option java_package = 'me.ronygomes.proto';
+
+message Version1 {
+
+}
+
+message Version2 {
+  
+}
