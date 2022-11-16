@@ -4,8 +4,44 @@ option java_package = 'me.ronygomes.proto';
 
 message Version1 {
 
+  double expense = 2;
+  string message = 3;
+  int32 id = 4;
+  Type type = 5;
+  string data = 6;
+
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    TYPE_RED = 1;
+    TYPE_ORANGE = 2;
+  }
 }
 
 message Version2 {
-  
+
+  // New fields with new tag (Create)
+  string new_message = 1;
+
+  // Keeping same (Read)
+  double expense = 2;
+
+  // Update
+  // Renaming works without any issue, if tag is same
+  string old_message = 3;
+
+  // Can easily change from int32 -> int64, works out of the box, but not recommended
+  int64 id = 4;
+
+  // Enum Updated
+  Type type = 5;
+
+  // Removed 'data' fields but reserved it (Delete)
+  reserved 6;
+  reserved 'data'; // optional
+
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    TYPE_RED = 1;
+    TYPE_GREEN = 3;
+  }
 }
