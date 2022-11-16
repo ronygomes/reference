@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 /**
- * It is ideal to specify exact argument, but can use default argument mather to match against specified type
+ * It is ideal to specify exact argument, but can use default argument matcher to match against specified type
  * <pre>
  *     Mockito.when(service.square(5)).thenReturn(25));
  *
@@ -147,9 +147,68 @@ public class ArgumentMatcherTest {
 
     @Test
     void testThat() {
-        Mockito.when(mockService.squareInt(Mockito.intThat(i -> i % 2 == 0))).thenReturn(100);
+        Mockito.when(mockService.squareByte(Mockito.byteThat(b -> b < 50))).thenReturn((byte) 10);
+        Assertions.assertEquals(10, mockService.squareByte((byte) 40));
+        Assertions.assertEquals(0, mockService.squareByte((byte) 60));
+
+        Mockito.when(mockService.squareShort(Mockito.shortThat(b -> b < 30))).thenReturn((short) 50);
+        Assertions.assertEquals(50, mockService.squareShort((short) 20));
+        Assertions.assertEquals(0, mockService.squareShort((short) 40));
+
+        Mockito.when(mockService.squareInt(Mockito.intThat(this::isEven))).thenReturn(100);
         Assertions.assertEquals(0, mockService.squareInt(5));
         Assertions.assertEquals(100, mockService.squareInt(8));
         Assertions.assertEquals(100, mockService.squareInt(10));
+
+        Mockito.when(mockService.squareLong(Mockito.longThat(l -> l < 40))).thenReturn(99L);
+        Assertions.assertEquals(99L, mockService.squareLong(30));
+        Assertions.assertEquals(0, mockService.squareLong(50));
+
+        Mockito.when(mockService.squareFloat(Mockito.floatThat(f -> f < 5))).thenReturn(20f);
+        Assertions.assertEquals(20, mockService.squareFloat(4));
+        Assertions.assertEquals(0, mockService.squareFloat(5));
+
+        Mockito.when(mockService.squareDouble(Mockito.doubleThat(d -> d > 100))).thenReturn(100.0);
+        Assertions.assertEquals(100, mockService.squareDouble(110));
+        Assertions.assertEquals(0, mockService.squareDouble(90));
+
+        Mockito.when(mockService.negateBoolean(Mockito.booleanThat(b -> !b))).thenReturn(true);
+        Assertions.assertTrue(mockService.negateBoolean(false));
+
+        Mockito.when(mockService.upperCaseChar(Mockito.charThat(Character::isLowerCase))).thenReturn('a');
+        Assertions.assertEquals('a', mockService.upperCaseChar('c'));
+        Assertions.assertEquals('\0', mockService.upperCaseChar('A'));
+
+        Mockito.when(mockService.upperCaseString(Mockito.argThat(s -> s.startsWith("H")))).thenReturn("Good");
+        Assertions.assertEquals("Good", mockService.upperCaseString("Hello"));
+        Assertions.assertEquals("Good", mockService.upperCaseString("Hi"));
+        Assertions.assertNull(mockService.upperCaseString("Bye"));
+    }
+
+    /* With Answer, it is possible match and return value based on complex logic */
+    @Test
+    void testAnswer() {
+        Mockito.when(mockService.dualParamMethod(Mockito.anyString(), Mockito.anyInt())).thenAnswer(
+                invocation -> {
+                    String key = invocation.getArgument(0);
+                    int data = invocation.getArgument(1);
+
+                    if (isEven(key.length()) && isEven(data)) {
+                        return 2;
+                    } else if (key.equals("Hello")) {
+                        return data;
+                    }
+
+                    return -1;
+                }
+        );
+
+        Assertions.assertEquals(2, mockService.dualParamMethod("Hi", 2));
+        Assertions.assertEquals(100, mockService.dualParamMethod("Hello", 100));
+        Assertions.assertEquals(-1, mockService.dualParamMethod("World", 100));
+    }
+
+    private boolean isEven(int value) {
+        return value % 2 == 0;
     }
 }

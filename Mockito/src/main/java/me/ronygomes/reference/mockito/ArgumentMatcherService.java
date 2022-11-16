@@ -41,4 +41,8 @@ public class ArgumentMatcherService {
     public String upperCaseString(String lowerCaseString) {
         return lowerCaseString.toUpperCase();
     }
+
+    public int dualParamMethod(String key, int data) {
+        return key.length() * data;
+    }
 }
