@@ -15,4 +15,16 @@ public class PersonService {
 
         notificationService.notifyPerson(p);
     }
+
+    public void doInBackgroud(int timeInMs, String name, int age) {
+        new Thread(() -> {
+            try {
+                Thread.sleep(timeInMs);
+                createPerson(name, age);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+    }
 }

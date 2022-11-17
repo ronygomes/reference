@@ -61,4 +61,19 @@ public class VerificationTest {
         order.verify(fruits).add("Apple");
         order.verify(fruits).add("Banana");
     }
+
+    @Test
+    void testTimeout() {
+        int waitTimeInMs = 50;
+
+        NotificationService notificationService = Mockito.mock(NotificationService.class);
+        PersonService personService = new PersonService(notificationService);
+
+        // This code runs asynchronously, so it finishes immediately
+        // But notificationService.notifyPerson() is invoked after 50ms
+        // So Mockito Framework need to wait minimum of 51ms to be sure weather the mock was called or not
+        personService.doInBackgroud(waitTimeInMs, "John", 25);
+
+        Mockito.verify(notificationService, Mockito.timeout(100)).notifyPerson(Mockito.any());
+    }
 }
