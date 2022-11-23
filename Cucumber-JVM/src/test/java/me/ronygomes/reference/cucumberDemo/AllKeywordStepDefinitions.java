@@ -37,7 +37,6 @@ public class AllKeywordStepDefinitions {
         calculator.setNum1(a);
         calculator.setNum2(b);
         calculator.setAction(Calculator.CALCULATOR_ADD);
-        System.out.println("a:b -> " + a + ":" + b);
     }
 
     @When("Count button in pressed")

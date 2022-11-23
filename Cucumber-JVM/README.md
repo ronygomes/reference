@@ -19,6 +19,11 @@ $ mvn wrapper:wrapper
 ```
 
 Maven `e` flag will show also Gherkin feature syntax error
-````
+```shell
 $ ./mvnw test -e
+```
+
+Can run for for specific tag with following command:
+```shell
+$ ./mvnw test -Dcucumber.filter.tags="@slow and not @hook_enabled"
 ```

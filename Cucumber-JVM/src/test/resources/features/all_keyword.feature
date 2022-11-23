@@ -1,3 +1,8 @@
+# language: en
+# It is recommended to write features in native language so that meaning doesn't change while translation
+# Cucumber has 40+ language supports and the first line of feature file tells Cucumber what spoken language to use.
+# Default is english
+
 # Line starting with `#' as first non whitespace character will considered as comment
 # Recommendation is to use 2 space for indentation in Gherkin file
 @ui

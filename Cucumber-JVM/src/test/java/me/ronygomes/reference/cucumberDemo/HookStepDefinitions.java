@@ -25,7 +25,10 @@ public class HookStepDefinitions {
 
     static {
         ORDER_MAP.put("BeforeAll", singletonList(1));
-        ORDER_MAP.put("AfterAll", singletonList(13));
+
+        // It will be 2 for following command
+        // $ mvn test -e -Dcucumber.filter.tags="@slow and not @hook_enabled"
+        ORDER_MAP.put("AfterAll", asList(13, 2));
 
         ORDER_MAP.put("Before", singletonList(2));
         ORDER_MAP.put("After", singletonList(12));
