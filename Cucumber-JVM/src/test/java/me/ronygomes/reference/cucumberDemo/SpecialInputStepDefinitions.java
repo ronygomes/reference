@@ -3,6 +3,7 @@ package me.ronygomes.reference.cucumberDemo;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Ma;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
@@ -78,5 +79,12 @@ public class SpecialInputStepDefinitions {
         Assertions.assertEquals("orange", complexData.get("orange").get("color"));
         Assertions.assertEquals("50", complexData.get("apple").get("price"));
         Assertions.assertEquals("70", complexData.get("orange").get("price"));
+    }
+
+    @Given("following table with escaped data")
+    public void followingTableWithEscapedData(Map<String, String> data) {
+        System.out.println(data.get("newline"));
+        System.out.println(data.get("pipe"));
+        System.out.println(data.get("backslash"));
     }
 }

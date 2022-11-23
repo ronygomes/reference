@@ -71,3 +71,17 @@ Feature: Special input type
     | orange |   orange  |  70   |
     When doing nothing
     Then verify table structure
+
+  Example:
+
+    Can escape control character using following way
+    Newline - \n
+    Backslash - \\
+    Pipe - \|
+
+    Given following table with escaped data
+      | newline   |  Line 1\nLine 2   |
+      |   pipe    |  history \| grep   |
+      | backslash |   one \\ two       |
+    When doing nothing
+    Then doing nothing
