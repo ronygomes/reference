@@ -9,3 +9,16 @@ Feature: Example of some inconsistencies
     Given same text
     When same text
     Then same text
+
+  Example:
+
+  For configuring dependency inject need to configure following steps
+    - Write a implementation of ObjectFactory
+    - Add this implementation with @ConfigurationParameter
+    - Expose this class with Java Service Loader API
+    - Gotchas - If any property is declared in step definition class need to add @ScenarioScoped.
+      Didn't find anything to stop it
+
+    Given GreetingService injected by Cucumber
+    When calling the greet() method
+    Then should get "Hello World!"

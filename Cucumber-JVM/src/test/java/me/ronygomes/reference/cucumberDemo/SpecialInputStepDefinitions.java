@@ -1,5 +1,6 @@
 package me.ronygomes.reference.cucumberDemo;
 
+import io.cucumber.guice.ScenarioScoped;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@ScenarioScoped
 public class SpecialInputStepDefinitions {
 
     private String message;
