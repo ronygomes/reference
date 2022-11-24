@@ -7,12 +7,19 @@ feature specification.
 I have following `features` written in this project:
 
 [all_keyword.feature][1] - Used all Gherkin keyword
+
 [cucumber_expression.feature][2] - For matching step definition expression, this is alternative to RegEx. 
+
 [custom_parameter.feature][3] - Custom parameter can be defined to match in expression
+
 [gotchas.feature][4] - Some unexpected behaviour
+
 [hook.feature][5] - Analogous to JUnit @Before, @After methods
+
 [lambda.feature][6] - Step function can be also defined using Lambda
+
 [regex_expression.feature][7] - Older way of matching step definition. Obscure but more powerful
+
 [special_input.feature][8] - Gherkin has an intuitive way of taking tabular or list data
 
 ### Run
