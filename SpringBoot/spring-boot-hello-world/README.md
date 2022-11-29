@@ -9,6 +9,9 @@ This project was created using https://start.spring.io/ with following parameter
 * Java: 17 (Required for v3)
 * Dependencies: Spring Web, Spring Data JPA, H2 Datbase, Spring Boot DevTools
 
+Note: DevTools includes Stack Trace in error page. But when application is run using `java -jar` (prod)
+DevTools is automatically disabled.
+
 Assuing JDK 17 is installed, run the project with following commnd:
 
 ```shell
