@@ -46,11 +46,10 @@ $ curl http://localhost:8080/tasks/101
 
 ## Class Details
 [Application.java][1] - `main()` class for this Spring Boot Application
+
 [HelloWorldController.java][2] - Basic controller which prints Hello World!
+
 [TaskResource.java][3] - Restful Task Create/Read/Delete. It is convention to use 'Resource' as suffix 
-
-
-
 
 [1]: https://github.com/ronygomes/reference/blob/master/SpringBoot/spring-boot-rest-intro/src/main/java/me/ronygomes/reference/springboot/Application.java
 [2]: https://github.com/ronygomes/reference/blob/master/SpringBoot/spring-boot-rest-intro/src/main/java/me/ronygomes/reference/springboot/HelloWorldController.java

@@ -40,19 +40,19 @@ public class TaskResource {
     }
     
     @PostMapping("/tasks")
-	public ResponseEntity<Task> createUser(@RequestBody Task task) {
-		taskDao.saveTask(task);;
-    
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-						.path("/{id}")
-						.buildAndExpand(task.getId())
-						.toUri();   
+    public ResponseEntity<Task> createUser(@RequestBody Task task) {
+        taskDao.saveTask(task);;
 
-		return ResponseEntity.created(location).build();
-	}
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                        .path("/{id}")
+                        .buildAndExpand(task.getId())
+                        .toUri();   
+
+        return ResponseEntity.created(location).build();
+    }
 
     @DeleteMapping("/tasks/{id}")
-	public void deleteUser(@PathVariable int id) {
-		taskDao.deleteById(id);
-	}
+    public void deleteUser(@PathVariable int id) {
+        taskDao.deleteById(id);
+    }
 }
