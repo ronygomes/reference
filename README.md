@@ -40,3 +40,12 @@ Played with the best mocking library for Java
 
 **Hadoop**\
 Implemented Word Frequency Counter using Map Reduce programming model with Hadoop Framework
+
+**Protobuf**\
+Learned language agnostic data serialization and deserialization format
+
+**Cucumber-JVM**\
+Explored Behaviour Driven Development (BDD) with Cucumber and Gherkin
+
+**SpringBoot**\
+Various configuration example of Spring boot
