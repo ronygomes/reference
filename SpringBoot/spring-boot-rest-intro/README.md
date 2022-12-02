@@ -1,4 +1,4 @@
-## Spring Boot Hello World Reference
+## Spring Boot REST Introduction Reference
 
 This project was created using https://start.spring.io/ with following parameter:
 
