@@ -7,10 +7,16 @@ This project was created using https://start.spring.io/ with following parameter
 * Spring Boot: 3.0.0
 * Packaging: Jar
 * Java: 17 (Required for v3)
-* Dependencies: Spring Web, Spring Data JPA, H2 Datbase, Spring Boot DevTools
+* Dependencies: Spring Web, Spring Boot DevTools
 
 Note: DevTools includes Stack Trace in error page. But when application is run using `java -jar` (prod)
 DevTools is automatically disabled.
+
+Default logging level is INFO, but DEBUG will show Auto Configuration logs. Add following line in `resources/application.properties`
+
+```
+logging.level.org.springframework=DEBUG
+```
 
 Assuing JDK 17 is installed, run the project with following commnd:
 
