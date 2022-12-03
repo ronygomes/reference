@@ -1,4 +1,4 @@
-## Spring Boot REST Introduction Reference
+## Spring Boot JSON Filtering Reference
 
 This project was created using https://start.spring.io/ with following parameter:
 
