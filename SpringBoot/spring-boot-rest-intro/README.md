@@ -18,7 +18,7 @@ Default logging level is INFO, but DEBUG will show Auto Configuration logs. Add 
 logging.level.org.springframework=DEBUG
 ```
 
-Assuing JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following commnd:
 
 ```shell
 ./mvnw spring-boot:run

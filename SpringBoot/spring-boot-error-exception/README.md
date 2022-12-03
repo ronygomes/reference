@@ -9,7 +9,7 @@ This project was created using https://start.spring.io/ with following parameter
 * Java: 17 (Required for v3)
 * Dependencies: Spring Web, Validation, Spring Boot DevTools
 
-Assuing JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following commnd:
 
 ```shell
 ./mvnw spring-boot:run
