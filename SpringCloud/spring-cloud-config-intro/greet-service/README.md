@@ -21,6 +21,12 @@ spring.config.import=optional:configserver:http://localhost:8888
 greet-service.welcome-message=Welcome from greet-service
 ```
 
+Configure profile with any of these properties
+```
+spring.profiles.active=dev
+spring.cloud.config.profile=dev
+```
+
 Assuming JDK 17 is installed, run the project with following commnd:
 
 ```shell
