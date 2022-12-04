@@ -27,7 +27,7 @@ spring.h2.console.enabled=true
 spring.jpa.show-sql=true
 ```
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 ./mvnw spring-boot:run

@@ -18,7 +18,7 @@ $ cd /tmp/global-config
 $ git init && git add . && git commit -m "Initial commit"
 ```
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 # Run config server

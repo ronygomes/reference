@@ -36,7 +36,7 @@ Following is the most important classes for working with HATEOAS:
 * org.springframework.hateoas.EntityModel - Wrapper for response
 * org.springframework.hateoas.server.mvc.WebMvcLinkBuilder - Helper for building links
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 ./mvnw spring-boot:run

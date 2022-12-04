@@ -26,8 +26,9 @@ Configure profile with any of these properties
 spring.profiles.active=dev
 spring.cloud.config.profile=dev
 ```
+**dev** profile specific configuration can be found http://localhost:8888/greet-service/dev
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 ./mvnw spring-boot:run

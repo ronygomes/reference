@@ -25,7 +25,7 @@ spring.cloud.config.server.git.default-label=master
 spring.cloud.config.server.git.uri=file:///tmp/global-config
 ```
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 ./mvnw spring-boot:run
