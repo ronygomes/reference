@@ -1,4 +1,4 @@
-## Spring Cloud OpenFeign Reference
+## Spring Cloud Eureka Reference
 
 OpenFeign provides an easy way to fetch data from other Microservices.
 
@@ -7,7 +7,7 @@ This project contain 2 parts
 * **greet-service:** Basic Spring Boot Application used as Service Provider
 * **dashboard-service:** Consumes API from **greet-service** using RestTemplate and OpenFeign
 
-Both of **greet-service:** and **dashboard-service:** will register to Eureka Server if Eureka Client dependency
+Both of **greet-service** and **dashboard-service** registers to Eureka Server as Eureka Client dependency
 is present in class path.
 
 If multiple instances of same microservice is present in the Eureka Server, Feign Client will automatically load
