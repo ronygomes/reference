@@ -1,8 +1,9 @@
 ## Spring Cloud Eureka Reference
 
-OpenFeign provides an easy way to fetch data from other Microservices.
+Eureka is a service registration and discovery server. With the help of naming server application
+can register themselves and query about the URL of other application.
 
-This project contain 2 parts
+This project contain 3 parts
 * **eureka-server:** Spring Cloud Service Discovery and Registration Server
 * **greet-service:** Basic Spring Boot Application used as Service Provider
 * **dashboard-service:** Consumes API from **greet-service** using RestTemplate and OpenFeign

@@ -35,4 +35,8 @@ Run the project using curl:
 # Format: <server>:<port>/<app-name>/<url>
 $ curl http://localhost:8765/greet-service/greet/Java
 {"greetMessage":"Hello, Java"}
+
+# api-gateway-02 will invoke '/greet/{name}' endpoint of 'greet-service' with custom url
+$ curl http://localhost:8766/greet/Java
+{"greetMessage":"Hello, Java"}
 ```
