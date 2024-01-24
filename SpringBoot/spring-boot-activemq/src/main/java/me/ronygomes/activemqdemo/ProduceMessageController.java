@@ -11,9 +11,9 @@ public class ProduceMessageController {
     @Autowired
     JmsProducer jmsProducer;
 
-    @GetMapping(value="/api/{message}")
-    public String sendMessage(@PathVariable String message){
-        jmsProducer.sendMessage(message);
-        return "@JMS: " + message;
+    @GetMapping(value="/api/complex/{a}/{b}")
+    public String sendMessage(@PathVariable int a, @PathVariable int b){
+        jmsProducer.sendMessage(a, b);
+        return String.format("JMS Sent: %d, %d", a, b);
     }
 }

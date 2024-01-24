@@ -14,8 +14,8 @@ public class JmsProducer {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Value("${active-mq.topic}")
-    private String topic;
+    @Value("${active-mq.queue}")
+    private String destination;
 
     private JmsTemplate jmsTemplate;
 
@@ -23,13 +23,18 @@ public class JmsProducer {
         this.jmsTemplate = jmsTemplate;
     }
 
-    public void sendMessage(String message) {
-        jmsTemplate.convertAndSend(topic, message);
+    public void sendMessage(int a, int b) {
+        // Can send to any destination
+        jmsTemplate.convertAndSend(destination, new Complex(a, b));
+
+        // Sends to default destination, here ${active-mq.queue}
+        jmsTemplate.convertAndSend(new Complex(0, 0));
     }
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 3000)
     public void produceMessage() {
-        sendMessage("Random: " + new Random().nextInt());
-        log.info("Random: " + new Random().nextInt());
+        Random r = new Random();
+        sendMessage(r.nextInt(), r.nextInt());
+        log.info("Complex Sent");
     }
 }
