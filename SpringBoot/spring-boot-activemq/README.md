@@ -29,8 +29,8 @@ Also remove `org.apache.activemq.broker.BrokerService` from `ActiveMQConfig`
 
 ### Test Application
 
-* GET /api/complex/<int>/<int> will **Produce** <Complex> in JMS
-* Will **Produce** 'new Complex(<RandomInt>, <RandomInt>' message every 3s
+* GET /api/complex/{int}/{int} will **Produce** Complex object in JMS
+* Will **Produce** 'new Complex({RandomInt}, {RandomInt}') message every 3s
 * Consumer will log message as INFO  
 
 ### Profile
