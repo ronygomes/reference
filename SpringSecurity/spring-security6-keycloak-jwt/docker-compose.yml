@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0.6
+    # Note: Default port is also 8080, added here for --http-port command reference
+    command:
+      - "start-dev"
+      - "--http-port=8080"
+      - "--import-realm"
+    ports:
+      - "8080:8080"
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=12345
+    volumes:
+      - ./ss-kc-realm.json:/opt/keycloak/data/import/ss-kc-realm.json:ro
+
+networks:
+  keycloak_network:
+    driver: bridge
