@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'me.ronygomes.referece'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework:spring-webmvc:6.0.9'
+
+    implementation 'org.springframework.security:spring-security-core:6.1.0'
+    implementation 'org.springframework.security:spring-security-config:6.1.0'
+    implementation 'org.springframework.security:spring-security-web:6.1.0'
+
+    implementation 'org.apache.tomcat:tomcat-jasper:10.1.19'
+    implementation 'org.apache.tomcat:tomcat-jasper-el:10.1.19'
+    implementation 'org.apache.tomcat:tomcat-jsp-api:10.1.19'
+
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.19'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.19'
+}
+
+application {
+    mainClass = 'me.ronygomes.reference.SpringSecurityTomcatEmbedded'
+}
