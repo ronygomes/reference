@@ -9,7 +9,7 @@ This project was created using https://start.spring.io/ with following parameter
 * Java: 17 (Required for v3)
 * Dependencies: Spring Web, Spring Security, Spring Boot DevTools
 
-Assuming JDK 17 is installed, run the project with following commnd:
+Assuming JDK 17 is installed, run the project with following command:
 
 ```shell
 ./mvnw spring-boot:run
@@ -18,7 +18,7 @@ Assuming JDK 17 is installed, run the project with following commnd:
 Spring Security works with 'SecurityFilterChain', which is list of filters. One way of updating the configuration is to define new 
 `SecurityFilterChain` bean.
 
-By default a credential with name 'user' and random password is generated. Folllowing configuration will create a static user/password
+By default, a credential with name 'user' and random password is generated. Following configuration will create a static user/password
 
 ```
 spring.security.user.name=admin

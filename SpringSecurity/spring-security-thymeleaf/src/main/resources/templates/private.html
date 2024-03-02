@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+    <title>Private Page</title>
+</head>
+<body>
+<h2>Private Page</h2>
+
+<h2 th:inline="text">Username:
+    <span th:remove="tag" sec:authentication="name">username</span>!
+</h2>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;  charset=ISO-8859-1" />
+    <title>Welcome Page</title>
+</head>
+<body>
+<div th:if="${param.error}">
+    Invalid username/password.
+</div>
+
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+
+<h2>Welcome Page</h2>
+<p>Click <a th:href="@{/private}">here</a> to see Private Page!</p>
+
+<form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
