@@ -11,7 +11,7 @@
 [ ] Write a Jackson 2.2 Module for serialize and deserialize
 [ ] Write a Spring AOP reference
 [ ] Java Dynamic Proxy https://www.baeldung.com/java-dynamic-proxies https://stackoverflow.com/questions/933993/what-are-dynamic-proxy-classes-and-why-would-i-use-one
-
+[ ] Add Reference for doing Concurrent Programming - Thread, Runnable, RecursiveThread, Executors
 
 
 [ ] What happens if you try to persist manage object
